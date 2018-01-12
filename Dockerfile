@@ -6,7 +6,6 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
         nodejs \
         wget \
         make \
-        default-jre \
         ruby \
         ruby-dev  && \
         gem install --no-rdoc --no-ri sass:3.4.22 \
@@ -15,7 +14,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -qyy clean
     
-# Install Chromium.
+# Install Google Chrome to run integration tests
 RUN \
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
   echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list && \
