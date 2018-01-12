@@ -6,6 +6,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
         nodejs \
         wget \
         make \
+        default-jre \
         ruby \
         ruby-dev  && \
         gem install --no-rdoc --no-ri sass:3.4.22 \
