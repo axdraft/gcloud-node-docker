@@ -4,6 +4,7 @@ FROM google/cloud-sdk
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
     apt-get update && apt-get install -y  \
         nodejs \
+        wget \
     && apt-get -qyy autoremove \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -qyy clean
