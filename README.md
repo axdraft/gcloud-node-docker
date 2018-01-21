@@ -7,8 +7,6 @@ Docker image based of `cloud-sdk-docker` which contains:
 * `node.js`
 * `Google Chrome`
 
-Create for maximum compatibility with `yeoman` generator and `grunt`
-
 ## Usage
 
 To use this image, pull from [Docker Hub](https://hub.docker.com/r/ozare/gcloud-node-docker/), run the following command:
