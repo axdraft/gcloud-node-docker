@@ -1,7 +1,7 @@
 FROM google/cloud-sdk
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get update && apt-get install -y  \
         nodejs \
         wget \
