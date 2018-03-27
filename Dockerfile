@@ -13,14 +13,9 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 RUN npm i -g npm
     
 # Install Google Chrome to run integration tests
-RUN wget -O /chrome.deb 'https://www.slimjet.com/chrome/download-chrome.php?file=lnx%2Fchrome64_63.0.3239.108.deb' && \
-    apt-get update && apt-get install -y  \
-        fonts-liberation \
-        gconf-service \
-        libappindicator1 \
-        libgconf-2-4 \
-        libgtk-3-0 \
-        libxss1 \
-        xdg-utils \
-   && dpkg -i /chrome.deb \
-   && rm /chrome.deb
+RUN \
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+  echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list && \
+  apt-get update && \
+  apt-get install -y google-chrome-beta && \
+  rm -rf /var/lib/apt/lists/*
