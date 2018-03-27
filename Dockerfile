@@ -9,6 +9,9 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -qyy clean
     
+# Update npm to the latest version
+RUN npm i -g npm
+    
 # Install Google Chrome to run integration tests
 RUN \
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
