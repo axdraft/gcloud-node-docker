@@ -5,6 +5,7 @@
 
 Docker image based of `cloud-sdk-docker` which contains:
 * `node.js`
+* `yarn`
 * `Google Chrome`
 
 ## Usage
