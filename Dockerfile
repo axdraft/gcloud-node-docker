@@ -15,6 +15,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 # Install awscli
 RUN apt-get update && apt-get install -y python3-pip &&  pip3 install awscli
 
+# Install docker
+RUN apt-get install docker-ce docker-ce-cli containerd.io
+
 # Install Google Chrome to run integration tests
 RUN \
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
