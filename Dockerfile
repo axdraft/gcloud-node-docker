@@ -12,6 +12,9 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -qyy clean
 
+# Install n package
+RUN yarn add n --global
+
 # Install awscli
 RUN apt-get update && apt-get install -y python3-pip &&  pip3 install awscli
 
