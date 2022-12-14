@@ -32,7 +32,7 @@ RUN echo \
 RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # Install GKE auth plugin
-RUN apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+RUN gcloud components install gke-gcloud-auth-plugin
 
 # Install Google Chrome to run integration tests
 RUN \
