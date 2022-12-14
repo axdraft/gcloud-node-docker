@@ -31,9 +31,6 @@ RUN echo \
       $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io
 
-# Install GKE auth plugin
-RUN gcloud components install gke-gcloud-auth-plugin
-
 # Install Google Chrome to run integration tests
 RUN \
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
