@@ -33,6 +33,8 @@ RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # Install Google Chrome to run integration tests
 RUN \
-    wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_112.0.5615.165-1_amd64.deb \
-    && apt install -y /tmp/chrome.deb \
-    && rm /tmp/chrome.deb
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+  echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list && \
+  apt-get update && \
+  apt-get install -y google-chrome-stable && \
+  rm -rf /var/lib/apt/lists/*
